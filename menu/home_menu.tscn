@@ -1,0 +1,74 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0et8ffe3s2f4"]
+
+[ext_resource type="Script" uid="uid://dirxdfx3ls4l" path="res://scripts/menu/button_quit.gd" id="1_6nmg4"]
+[ext_resource type="PackedScene" uid="uid://c6c1yg0edb1lg" path="res://game/backgrounds/background_home_menu.tscn" id="1_j2n2p"]
+[ext_resource type="Script" uid="uid://f2knvirkp3ic" path="res://scripts/menu/button_play.gd" id="1_npl8f"]
+[ext_resource type="Theme" uid="uid://de2fw7xb42v13" path="res://game/game_theme.tres" id="2_8jq1a"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect" parent="." instance=ExtResource("1_j2n2p")]
+layout_mode = 1
+color = Color(0.942684, 0.606625, 1, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -270.0
+offset_right = 270.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_8jq1a")
+theme_override_font_sizes/font_size = 45
+text = "LD 57 Unamed"
+
+[node name="HSeparator2" type="HSeparator" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_8jq1a")
+theme_override_constants/separation = 120
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="ButtonPlay" type="Button" parent="ColorRect/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_8jq1a")
+theme_override_font_sizes/font_size = 40
+text = "Play"
+script = ExtResource("1_npl8f")
+
+[node name="HSeparator" type="HSeparator" parent="ColorRect/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_8jq1a")
+theme_override_constants/separation = 40
+
+[node name="ButtonQuit" type="Button" parent="ColorRect/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_8jq1a")
+theme_override_font_sizes/font_size = 40
+text = "Exit
+"
+script = ExtResource("1_6nmg4")
+
+[connection signal="pressed" from="ColorRect/VBoxContainer/VBoxContainer/ButtonPlay" to="ColorRect/VBoxContainer/VBoxContainer/ButtonPlay" method="_on_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/VBoxContainer/ButtonQuit" to="ColorRect/VBoxContainer/VBoxContainer/ButtonQuit" method="_on_pressed"]

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://borucegpl5ghm"]
+
+[ext_resource type="Script" path="res://game/components/ui/score_display.gd" id="1_47h0g"]
+[ext_resource type="Theme" uid="uid://de2fw7xb42v13" path="res://game/game_theme.tres" id="2_14c5b"]
+
+[node name="scoreDisplay" type="HBoxContainer"]
+script = ExtResource("1_47h0g")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("2_14c5b")
+theme_override_font_sizes/font_size = 16
+text = "Score"
+
+[node name="value" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("2_14c5b")
+theme_override_font_sizes/font_size = 16
+text = "0"

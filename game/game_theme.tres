@@ -1,0 +1,22 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://de2fw7xb42v13"]
+
+[ext_resource type="FontFile" uid="uid://beyahsas7qonv" path="res://assets/fonts/Kenney Future Square.ttf" id="1_irlv1"]
+[ext_resource type="FontFile" uid="uid://xvi5k8p58etj" path="res://assets/fonts/Kenney Blocks.ttf" id="2_ufjmg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e56bp"]
+bg_color = Color(0.1728, 0.64, 0.42976, 0.835294)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bcwc8"]
+bg_color = Color(0.1728, 0.64, 0.42976, 1)
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_oyfq3"]
+color = Color(0, 0, 0, 0)
+
+[resource]
+default_font = ExtResource("2_ufjmg")
+Button/fonts/font = ExtResource("1_irlv1")
+Button/styles/hover = SubResource("StyleBoxFlat_e56bp")
+Button/styles/normal = SubResource("StyleBoxFlat_bcwc8")
+HSeparator/styles/separator = SubResource("StyleBoxLine_oyfq3")
+Label/fonts/font = ExtResource("2_ufjmg")

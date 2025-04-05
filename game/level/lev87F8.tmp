@@ -1,0 +1,133 @@
+[gd_scene load_steps=14 format=3 uid="uid://caxc64i8q626p"]
+
+[ext_resource type="PackedScene" uid="uid://db0dtqnm7nnbo" path="res://game/components/base/base.tscn" id="1_cis03"]
+[ext_resource type="Script" path="res://game/level/level.gd" id="1_f4g35"]
+[ext_resource type="PackedScene" uid="uid://borucegpl5ghm" path="res://game/components/ui/score_display.tscn" id="1_t7sfj"]
+[ext_resource type="PackedScene" uid="uid://04sen0n8xdrg" path="res://game/components/falling_shape/falling_shape.tscn" id="2_tao57"]
+[ext_resource type="PackedScene" uid="uid://kauv1rrq64rc" path="res://game/components/falling_shape/shapes/shape_1.tscn" id="3_7y2r0"]
+[ext_resource type="PackedScene" uid="uid://6wt5nqbjs53o" path="res://game/components/shape_generator/shape_generator.tscn" id="3_ik7sb"]
+[ext_resource type="PackedScene" uid="uid://bt0k1fucnr0hm" path="res://game/components/hitbox_endgame/hitbox_endgame.tscn" id="4_ytgmy"]
+[ext_resource type="PackedScene" uid="uid://b8xash08xeprg" path="res://game/components/cameras/camera_2d.tscn" id="5_06gqw"]
+[ext_resource type="PackedScene" uid="uid://dengs7yu7ds60" path="res://game/components/controller/movement_controller.tscn" id="6_7wjhv"]
+[ext_resource type="PackedScene" uid="uid://dolv2glgpcjgq" path="res://game/backgrounds/background_game.tscn" id="8_my5jy"]
+[ext_resource type="PackedScene" uid="uid://c7ylcjvky5iei" path="res://game/ui/life_display.tscn" id="8_odmwk"]
+[ext_resource type="Theme" uid="uid://de2fw7xb42v13" path="res://game/game_theme.tres" id="8_xnqnw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_04c3s"]
+size = Vector2(800, 400)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_f4g35")
+
+[node name="Level" type="Node2D" parent="."]
+
+[node name="FallingShape" parent="Level" instance=ExtResource("2_tao57")]
+position = Vector2(41, -431)
+
+[node name="CollisionPolygon2D" parent="Level/FallingShape" instance=ExtResource("3_7y2r0")]
+position = Vector2(-34, 319)
+
+[node name="FallingShape2" parent="Level" instance=ExtResource("2_tao57")]
+position = Vector2(41, -431)
+
+[node name="CollisionPolygon2D" parent="Level/FallingShape2" instance=ExtResource("3_7y2r0")]
+position = Vector2(-36, 207)
+
+[node name="FallingShape3" parent="Level" instance=ExtResource("2_tao57")]
+position = Vector2(41, -431)
+
+[node name="CollisionPolygon2D" parent="Level/FallingShape3" instance=ExtResource("3_7y2r0")]
+position = Vector2(-30, 81)
+
+[node name="FallingShape4" parent="Level" instance=ExtResource("2_tao57")]
+position = Vector2(32, -537)
+
+[node name="CollisionPolygon2D" parent="Level/FallingShape4" instance=ExtResource("3_7y2r0")]
+position = Vector2(-30, 81)
+
+[node name="FallingShape5" parent="Level" instance=ExtResource("2_tao57")]
+position = Vector2(37, -658)
+
+[node name="CollisionPolygon2D" parent="Level/FallingShape5" instance=ExtResource("3_7y2r0")]
+position = Vector2(-30, 81)
+
+[node name="Base" parent="Level" instance=ExtResource("1_cis03")]
+collision_mask = 3
+
+[node name="ShapeGenerator" parent="Level" instance=ExtResource("3_ik7sb")]
+position = Vector2(0, -800)
+
+[node name="AreaGenerator" type="Area2D" parent="Level/ShapeGenerator"]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/ShapeGenerator/AreaGenerator"]
+shape = SubResource("RectangleShape2D_04c3s")
+
+[node name="HitboxEndGame" parent="Level" instance=ExtResource("4_ytgmy")]
+position = Vector2(389, 22047)
+
+[node name="Camera2D" parent="Level" node_paths=PackedStringArray("target") instance=ExtResource("5_06gqw")]
+target = NodePath("../ShapeGenerator")
+
+[node name="MovementController" parent="Level" instance=ExtResource("6_7wjhv")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/VBoxContainer2/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MaxScoreDisplay" parent="CanvasLayer/VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("1_t7sfj")]
+layout_mode = 2
+size_flags_horizontal = 3
+label_str = "Best Score : "
+font_size = 20
+
+[node name="LifeDisplay" parent="CanvasLayer/VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("8_odmwk")]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/VBoxContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ScoreDisplay" parent="CanvasLayer/VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("1_t7sfj")]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("8_xnqnw")
+alignment = 1
+label_str = ""
+font_size = 32
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" parent="CanvasLayer2" instance=ExtResource("8_my5jy")]
+color = Color(0.608631, 0.723537, 0.794015, 1)
+
+[connection signal="body_entered" from="Level/ShapeGenerator/AreaGenerator" to="Level/ShapeGenerator" method="_on_area_generator_body_entered"]
