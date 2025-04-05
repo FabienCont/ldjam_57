@@ -1,0 +1,56 @@
+[gd_scene load_steps=11 format=3 uid="uid://2og61uptxwg2"]
+
+[ext_resource type="Script" uid="uid://bsfa460cxgqqh" path="res://addons/JamStarterPack/components/HealthComponent.gd" id="1_ifo1v"]
+[ext_resource type="Script" uid="uid://dayjyc66fjj48" path="res://game/components/player/player.gd" id="1_rn0mg"]
+[ext_resource type="Script" uid="uid://chsmenidovpat" path="res://addons/JamStarterPack/components/2d/physics/VelocityComponent2D.gd" id="2_bylo4"]
+[ext_resource type="Script" uid="uid://1x0rkunno7ts" path="res://addons/JamStarterPack/components/2d/controllers/TopDownControllerComponent2D.gd" id="3_y8tf5"]
+[ext_resource type="Script" uid="uid://bh24qve0k1v43" path="res://addons/JamStarterPack/components/2d/physics/HurtboxComponent2D.gd" id="4_bylo4"]
+[ext_resource type="Script" uid="uid://bd8unst3tp6bu" path="res://addons/JamStarterPack/components/2d/physics/InteractionComponent2D.gd" id="5_y8tf5"]
+[ext_resource type="Script" uid="uid://ca7bvpda81pr1" path="res://addons/JamStarterPack/components/2d/physics/CollectorComponent2D.gd" id="6_otxdc"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gnnbm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_otxdc"]
+radius = 16.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rn0mg"]
+radius = 16.0
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_rn0mg")
+
+[node name="HealthComponent" type="Node" parent="."]
+script = ExtResource("1_ifo1v")
+metadata/_custom_type_script = "uid://bsfa460cxgqqh"
+
+[node name="VelocityComponent2D" type="Node" parent="."]
+script = ExtResource("2_bylo4")
+metadata/_custom_type_script = "uid://chsmenidovpat"
+
+[node name="TopDownControllerComponent2D" type="Node" parent="."]
+script = ExtResource("3_y8tf5")
+metadata/_custom_type_script = "uid://1x0rkunno7ts"
+
+[node name="HurtboxComponent2D" type="CollisionShape2D" parent="." node_paths=PackedStringArray("health_component")]
+shape = SubResource("CapsuleShape2D_gnnbm")
+script = ExtResource("4_bylo4")
+health_component = NodePath("../HealthComponent")
+metadata/_custom_type_script = "uid://bh24qve0k1v43"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="InteractionComponent2D" type="Area2D" parent="."]
+script = ExtResource("5_y8tf5")
+metadata/_custom_type_script = "uid://bd8unst3tp6bu"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionComponent2D"]
+shape = SubResource("CircleShape2D_otxdc")
+
+[node name="CollectorComponent2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 32
+script = ExtResource("6_otxdc")
+metadata/_custom_type_script = "uid://ca7bvpda81pr1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectorComponent2D"]
+shape = SubResource("CircleShape2D_rn0mg")

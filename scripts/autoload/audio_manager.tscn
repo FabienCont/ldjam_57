@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvb011qfa37eh"]
+
+[ext_resource type="Script" uid="uid://cju0nt7svv7gy" path="res://scripts/autoload/audio_manager.gd" id="1_3i13e"]
+[ext_resource type="Script" path="res://scripts/audios/AudioQueue.gd" id="2_2vw71"]
+[ext_resource type="AudioStream" uid="uid://wuhit576e12s" path="res://assets/sounds/ui/chips-collide-1.ogg" id="2_guogy"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_5t4b7"]
+streams_count = 4
+
+[node name="AudioManager" type="Node2D"]
+script = ExtResource("1_3i13e")
+
+[node name="BackgroundAudioQueue" type="Node" parent="."]
+script = ExtResource("2_2vw71")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="BackgroundAudioQueue"]
+stream = ExtResource("2_guogy")
+
+[node name="BackgroundGameAudioQueue" type="Node" parent="."]
+script = ExtResource("2_2vw71")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="BackgroundGameAudioQueue"]
+
+[node name="ChoiceButton" type="Node" parent="."]
+script = ExtResource("2_2vw71")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ChoiceButton"]
+stream = SubResource("AudioStreamRandomizer_5t4b7")

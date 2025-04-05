@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="PlayerStatData" load_steps=2 format=3 uid="uid://dhsylxn5mnnjx"]
+
+[ext_resource type="Script" uid="uid://wrp5xcxhsgs6" path="res://resources/stats/PlayerStatsData.gd" id="1_0awl1"]
+
+[resource]
+script = ExtResource("1_0awl1")
+life = 100.0
+max_life = 100.0
+collector_distance = 10.0
+visibility = 100.0
+level = 1.0
+movement_speed = 37.0
+acceleration = 1000.0
+attack_speed = 1.0
+metadata/_custom_type_script = "uid://wrp5xcxhsgs6"

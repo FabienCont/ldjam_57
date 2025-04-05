@@ -8,6 +8,19 @@
 
 config_version=5
 
+[addons]
+
+resources_spreadsheet_view/array_color_tint=100.0
+resources_spreadsheet_view/color_rows=true
+resources_spreadsheet_view/array_min_width=128.0
+resources_spreadsheet_view/resource_preview_size=32.0
+resources_spreadsheet_view/clip_headers=false
+resources_spreadsheet_view/dupe_arrays=true
+resources_spreadsheet_view/context_menu_on_leftclick=false
+resources_spreadsheet_view/fold_docks=true
+resources_spreadsheet_view/resource_cell_label_mode=1
+resources_spreadsheet_view/freeze_first_column=true
+
 [application]
 
 config/name="LD57"
@@ -21,6 +34,8 @@ config/icon="res://icon.svg"
 
 GameSignalsAutoload="*res://scripts/autoload/game_signals_autoload.gd"
 GameStateAutoload="*res://scripts/autoload/game_state_autoload.gd"
+AudioManager="*res://scripts/autoload/audio_manager.tscn"
+CameraUtils="*res://scripts/autoload/camera_utils.gd"
 
 [display]
 
@@ -32,7 +47,7 @@ window/handheld/orientation=1
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/github_to_itch/plugin.cfg", "res://addons/nklbdev.importality/plugin.cfg")
+enabled=PackedStringArray("res://addons/JamStarterPack/plugin.cfg", "res://addons/godot_resource_groups/plugin.cfg", "res://addons/nklbdev.importality/plugin.cfg", "res://addons/resources_spreadsheet_view/plugin.cfg")
 
 [file_customization]
 
@@ -40,6 +55,7 @@ folder_colors={
 "res://assets/": "green",
 "res://game/": "red",
 "res://menu/": "yellow",
+"res://resources/": "purple",
 "res://scripts/": "orange"
 }
 
@@ -47,6 +63,10 @@ folder_colors={
 
 config/itch_username="Fabonatchi"
 config/itch_project_name="ldjam57"
+
+[godot_resource_groups]
+
+auto_rebuild=true
 
 [input]
 
@@ -92,6 +112,30 @@ right_speed={
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":true,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194321,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }
+look_up={
+"deadzone": 0.2,
+"events": []
+}
+look_left={
+"deadzone": 0.2,
+"events": []
+}
+look_right={
+"deadzone": 0.2,
+"events": []
+}
+look_down={
+"deadzone": 0.2,
+"events": []
+}
+dash={
+"deadzone": 0.2,
+"events": []
+}
+attack={
+"deadzone": 0.2,
+"events": []
+}
 
 [input_devices]
 
@@ -104,6 +148,7 @@ pointing/emulate_touch_from_mouse=true
 2d_physics/layer_3="out_of_bound"
 2d_physics/layer_4="camera"
 2d_physics/layer_5="object"
+2d_physics/layer_6="collectables"
 
 [rendering]
 

@@ -6,7 +6,6 @@ var score : int = 0
 var max_score : int = 0
 @onready var label_score = $CanvasLayer/VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer2/ScoreDisplay
 @onready var label_max_score = $CanvasLayer/VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer/MaxScoreDisplay
-@onready var life_display = $CanvasLayer/VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer/LifeDisplay
 var current_shape:
 	get():
 		return current_shape

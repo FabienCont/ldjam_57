@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="PlayerInfo" load_steps=6 format=3 uid="uid://uw12jq71m54o"]
+
+[ext_resource type="Script" uid="uid://dvxc44fr6sti0" path="res://addons/JamStarterPack/resources/abilities/implementations/MoveAbility.gd" id="1_bmqne"]
+[ext_resource type="Script" uid="uid://ditmd3n5sdepd" path="res://addons/JamStarterPack/resources/abilities/AbilitiesController.gd" id="1_mujd4"]
+[ext_resource type="Script" uid="uid://8bee6qv3c3v7" path="res://resources/playerInfo/PlayerInfo.gd" id="1_s733n"]
+[ext_resource type="Resource" uid="uid://cp7th7mbmebe1" path="res://game/components/logic/PlayerLogicComponent.tres" id="2_cexvw"]
+
+[sub_resource type="Resource" id="Resource_cexvw"]
+script = ExtResource("1_mujd4")
+abilities = {
+"move": ExtResource("1_bmqne")
+}
+metadata/_custom_type_script = "uid://ditmd3n5sdepd"
+
+[resource]
+script = ExtResource("1_s733n")
+abilities_controller = SubResource("Resource_cexvw")
+logic_component = ExtResource("2_cexvw")
+metadata/_custom_type_script = "uid://8bee6qv3c3v7"
