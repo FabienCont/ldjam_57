@@ -36,6 +36,11 @@ GameSignalsAutoload="*res://scripts/autoload/game_signals_autoload.gd"
 GameStateAutoload="*res://scripts/autoload/game_state_autoload.gd"
 AudioManager="*res://scripts/autoload/audio_manager.tscn"
 CameraUtils="*res://scripts/autoload/camera_utils.gd"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+
+[dialogue_manager]
+
+runtime/balloon_path="res://game/components/balloon_idea/balloon.tscn"
 
 [display]
 
@@ -45,10 +50,11 @@ window/stretch/mode="viewport"
 window/stretch/aspect="keep_width"
 window/stretch/scale_mode="integer"
 window/handheld/orientation=1
+mouse_cursor/custom_image="uid://bhq05h6syw5p3"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/JamStarterPack/plugin.cfg", "res://addons/godot_resource_groups/plugin.cfg", "res://addons/nklbdev.importality/plugin.cfg", "res://addons/resources_spreadsheet_view/plugin.cfg")
+enabled=PackedStringArray("res://addons/JamStarterPack/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/godot_resource_groups/plugin.cfg", "res://addons/nklbdev.importality/plugin.cfg", "res://addons/resources_spreadsheet_view/plugin.cfg")
 
 [file_customization]
 
@@ -142,10 +148,14 @@ attack={
 
 pointing/emulate_touch_from_mouse=true
 
+[internationalization]
+
+locale/translations_pot_files=PackedStringArray("res://assets/dialogues/exit_dialogue.dialogue", "res://assets/dialogues/level_1.dialogue")
+
 [layer_names]
 
 2d_physics/layer_1="terrain"
-2d_physics/layer_2="falling_object"
+2d_physics/layer_2="player"
 2d_physics/layer_3="out_of_bound"
 2d_physics/layer_4="camera"
 2d_physics/layer_5="object"

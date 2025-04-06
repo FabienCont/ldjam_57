@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EffectInfo" load_steps=3 format=3 uid="uid://mtignv746mov"]
+
+[ext_resource type="Script" uid="uid://ce2xaom5bvgkf" path="res://addons/JamStarterPack/resources/effects/EffectInfo.gd" id="1_hivp8"]
+[ext_resource type="Resource" uid="uid://ci7ahf1b83imv" path="res://scripts/effects/ShutdownEffectResource.tres" id="1_y5ipk"]
+
+[resource]
+script = ExtResource("1_hivp8")
+name = "triggerShutdown"
+state = "undefined"
+handler = ExtResource("1_y5ipk")
+metadata/_custom_type_script = "uid://ce2xaom5bvgkf"

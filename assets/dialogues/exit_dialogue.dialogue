@@ -1,0 +1,9 @@
+~ start
+Me: [[Should i sleep here ?| A bed in this place, i'm so tired]]
+- Go to sleep 
+	Nathan: I will try to make a sweet dream.
+	set GameStateAutoload.data.want_to_sleep = true
+- Not now
+	Nathan: I want to stay here a bit.
+	set GameStateAutoload.data.want_to_sleep = false
+=> END

@@ -5,7 +5,8 @@ class_name TopDownControllerComponent2D
 
 func _ready():
 	if not Engine.is_editor_hint():	
-		Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+		Input.mouse_mode = Input.MOUSE_MODE_CONFINED
+		pass
 
 func has_move() -> bool:
 	return _has_move_this_frame

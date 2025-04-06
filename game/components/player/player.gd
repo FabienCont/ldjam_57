@@ -10,6 +10,7 @@ class_name Player
 func _ready() -> void:
 	init_player(player_info)
 	
+	
 func init_player(player_info_init :PlayerInfo) -> void:
 	init_entity(playerStats.export_to_stat_controller(),player_info_init.upgrades_controller,player_info_init.abilities_controller,player_info_init.logic_component)
 	player_info = player_info_init
@@ -19,6 +20,9 @@ func init_player(player_info_init :PlayerInfo) -> void:
 func _process(delta: float) -> void:
 	logic_component.process_logic(delta)
 
+func get_look_direction() -> Vector2:
+	return controller_component.get_look_direction()
+	
 func get_current_direction() -> Vector2:
 	return controller_component.get_current_direction()
 	

@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var trauma_reduction_rate := 1.0
+@export var trauma_reduction_rate := 0.2
 @export var node_to_follow :Node2D
 
 @export var max_x := 16.0

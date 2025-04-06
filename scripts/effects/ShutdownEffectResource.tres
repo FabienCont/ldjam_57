@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="EventTriggerShutdownEffect" load_steps=2 format=3 uid="uid://ci7ahf1b83imv"]
+
+[ext_resource type="Script" uid="uid://b7f5bnj4vork3" path="res://scripts/effects/TriggerShutdownEffect.gd" id="1_i4jve"]
+
+[resource]
+script = ExtResource("1_i4jve")
+metadata/_custom_type_script = "uid://b7f5bnj4vork3"

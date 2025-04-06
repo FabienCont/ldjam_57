@@ -22,6 +22,7 @@ radius = 16.0
 radius = 16.0
 
 [node name="Player" type="CharacterBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_rn0mg")
 player_info = ExtResource("2_ia325")
 playerStats = ExtResource("3_lbxq0")
@@ -45,9 +46,8 @@ health_component = NodePath("../HealthComponent")
 metadata/_custom_type_script = "uid://bh24qve0k1v43"
 
 [node name="SpriteComponent" parent="." instance=ExtResource("6_gnnbm")]
-animation = &"Jump"
-frame = 2
-frame_progress = 1.0
+position = Vector2(0, -32)
+animation = &"Walk"
 
 [node name="InteractionComponent2D" type="Area2D" parent="."]
 visible = false
