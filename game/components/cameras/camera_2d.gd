@@ -11,7 +11,7 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func get_offset_camera() -> int:
-	return int(get_viewport().get_visible_rect().size.y/3)
+	return 6
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

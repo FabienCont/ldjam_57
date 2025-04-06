@@ -15,7 +15,6 @@ func init_player(player_info_init :PlayerInfo) -> void:
 	player_info = player_info_init
 	player_info.upgrades_controller = upgrades_controller
 	player_info.abilities_controller = abilities_controller
-	
 
 func _process(delta: float) -> void:
 	logic_component.process_logic(delta)
