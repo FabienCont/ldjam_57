@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://12kb1fania06"]
+
+[ext_resource type="Texture2D" uid="uid://61ji3nssmaeb" path="res://assets/sprites/exit_scene.aseprite" id="2_5an6a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mq4h1"]
+size = Vector2(38, 63)
+
+[node name="StartingBed" type="Node2D"]
+z_index = 2
+y_sort_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(2, -21)
+texture = ExtResource("2_5an6a")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+y_sort_enabled = true
+position = Vector2(2, -4.5)
+shape = SubResource("RectangleShape2D_mq4h1")

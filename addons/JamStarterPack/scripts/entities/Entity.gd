@@ -50,7 +50,7 @@ func init_entity(stats_controller_init :StatsController,upgrades_controller_init
 	logic_component.init_logic_component(self)
 	
 func set_sprite_component(new_sprite: AnimatedSprite2D):
-	new_sprite.scale = Vector2(0.5,0.5)
+	new_sprite.position = Vector2(0.,-32)
 	sprite_component.replace_by(new_sprite)
 	sprite_component = new_sprite
 	

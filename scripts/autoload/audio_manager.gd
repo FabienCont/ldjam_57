@@ -29,6 +29,9 @@ func playFootstepSound():
 
 func playBoomShutdownSound():
 	pass
+
+func playEnemiesImpactSound():
+	pass
 	
 func get_audio_queue_by_name(audio_name: String) -> AudioQueue :
 	return _audioQueuesByName[audio_name]

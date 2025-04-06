@@ -4,10 +4,10 @@
 [ext_resource type="FontFile" uid="uid://xvi5k8p58etj" path="res://assets/fonts/Kenney Blocks.ttf" id="2_ufjmg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e56bp"]
-bg_color = Color(0.1728, 0.64, 0.42976, 0.835294)
+bg_color = Color(0.119741, 0.482981, 0.570038, 0.835294)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bcwc8"]
-bg_color = Color(0.1728, 0.64, 0.42976, 1)
+bg_color = Color(0.0976104, 0.383177, 0.447514, 1)
 border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_oyfq3"]

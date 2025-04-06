@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=3 uid="uid://cu1xp14rygso5"]
+
+[ext_resource type="Script" uid="uid://b6mu166lxnsgy" path="res://game/components/ennemies/enemy_model.gd" id="1_w3nyb"]
+[ext_resource type="Script" uid="uid://db7lxlraqg3iv" path="res://addons/JamStarterPack/components/2d/ia/FollowTargetComponent2D.gd" id="2_7ge3a"]
+[ext_resource type="Script" uid="uid://tnik6w2n0xij" path="res://addons/JamStarterPack/components/2d/physics/HitboxComponent2D.gd" id="3_o3b42"]
+[ext_resource type="Script" uid="uid://chsmenidovpat" path="res://addons/JamStarterPack/components/2d/physics/VelocityComponent2D.gd" id="4_cr6tt"]
+[ext_resource type="Script" uid="uid://bh24qve0k1v43" path="res://addons/JamStarterPack/components/2d/physics/HurtboxComponent2D.gd" id="5_abi2o"]
+[ext_resource type="Script" uid="uid://bsfa460cxgqqh" path="res://addons/JamStarterPack/components/HealthComponent.gd" id="6_im12u"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cr6tt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_im12u"]
+
+[node name="EnemyModel" type="CharacterBody2D" groups=["Enemies"]]
+z_index = 1
+y_sort_enabled = true
+script = ExtResource("1_w3nyb")
+
+[node name="FollowTargetComponent2D" type="Node" parent="." node_paths=PackedStringArray("velocity_component")]
+script = ExtResource("2_7ge3a")
+velocity_component = NodePath("../VelocityComponent2D")
+metadata/_custom_type_script = "uid://db7lxlraqg3iv"
+
+[node name="HitboxComponent2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("3_o3b42")
+metadata/_custom_type_script = "uid://tnik6w2n0xij"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent2D"]
+shape = SubResource("CircleShape2D_cr6tt")
+
+[node name="VelocityComponent2D" type="Node" parent="."]
+script = ExtResource("4_cr6tt")
+metadata/_custom_type_script = "uid://chsmenidovpat"
+
+[node name="HurtboxComponent2D" type="CollisionShape2D" parent="." node_paths=PackedStringArray("health_component")]
+shape = SubResource("CircleShape2D_im12u")
+script = ExtResource("5_abi2o")
+health_component = NodePath("../HealthComponent")
+metadata/_custom_type_script = "uid://bh24qve0k1v43"
+
+[node name="HealthComponent" type="Node" parent="."]
+script = ExtResource("6_im12u")
+metadata/_custom_type_script = "uid://bsfa460cxgqqh"
+
+[node name="SpriteComponent" type="AnimatedSprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, -32)

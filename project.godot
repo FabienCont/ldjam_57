@@ -23,11 +23,12 @@ resources_spreadsheet_view/freeze_first_column=true
 
 [application]
 
-config/name="LD57"
+config/name="A Long Night"
 run/main_scene="res://menu/home_menu.tscn"
 config/features=PackedStringArray("4.4", "Mobile")
-boot_splash/bg_color=Color(0.617007, 0.295768, 0.477886, 1)
+boot_splash/bg_color=Color(0.00334326, 0.125553, 0.198953, 1)
 boot_splash/fullsize=false
+boot_splash/image="uid://kumavlrh83k5"
 config/icon="res://icon.svg"
 
 [autoload]
@@ -37,6 +38,7 @@ GameStateAutoload="*res://scripts/autoload/game_state_autoload.gd"
 AudioManager="*res://scripts/autoload/audio_manager.tscn"
 CameraUtils="*res://scripts/autoload/camera_utils.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+SceneLoader="*res://scripts/autoload/SceneLoader.tscn"
 
 [dialogue_manager]
 
@@ -70,6 +72,10 @@ folder_colors={
 
 config/itch_username="Fabonatchi"
 config/itch_project_name="ldjam57"
+
+[global_group]
+
+Enemies=""
 
 [godot_resource_groups]
 

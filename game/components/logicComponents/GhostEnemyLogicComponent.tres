@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="EnemyLogicComponent" load_steps=2 format=3 uid="uid://cr1uj5vac2of1"]
+
+[ext_resource type="Script" uid="uid://da5jn1s3od7db" path="res://game/components/logicComponents/EnemyLogicComponent.gd" id="1_bm0wm"]
+
+[resource]
+script = ExtResource("1_bm0wm")
+distance_before_attack = 25.0
+metadata/_custom_type_script = "uid://da5jn1s3od7db"

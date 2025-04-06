@@ -1,14 +1,17 @@
 [gd_scene load_steps=5 format=3 uid="uid://d3vdr5j6nw03q"]
 
-[ext_resource type="Script" path="res://addons/JamStarterPack/scripts/cameras/ShakeableCameraArea.gd" id="1_oov1q"]
-[ext_resource type="Script" path="res://addons/JamStarterPack/scripts/cameras/Camera2DFollow.gd" id="2_u0rx5"]
+[ext_resource type="Script" uid="uid://b8uru3ua8jgi4" path="res://addons/JamStarterPack/scripts/cameras/ShakeableCameraArea.gd" id="1_oov1q"]
+[ext_resource type="Script" uid="uid://1vvaklosavsa" path="res://addons/JamStarterPack/scripts/cameras/Camera2DFollow.gd" id="2_u0rx5"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_1pwfs"]
+frequency = 0.0128
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_aewac"]
 
 [node name="ShakeableCamera" type="Area2D"]
 script = ExtResource("1_oov1q")
+max_x = 48.0
+max_y = 48.0
 noise = SubResource("FastNoiseLite_1pwfs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

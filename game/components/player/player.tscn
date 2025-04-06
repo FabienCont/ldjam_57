@@ -46,6 +46,7 @@ health_component = NodePath("../HealthComponent")
 metadata/_custom_type_script = "uid://bh24qve0k1v43"
 
 [node name="SpriteComponent" parent="." instance=ExtResource("6_gnnbm")]
+y_sort_enabled = true
 position = Vector2(0, -32)
 animation = &"Walk"
 

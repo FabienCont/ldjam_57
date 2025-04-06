@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dr2q5imcfciks"]
+[gd_scene load_steps=11 format=3 uid="uid://dr2q5imcfciks"]
 
 [ext_resource type="Script" uid="uid://dnnvmjks85gc8" path="res://game/components/balloon_idea/balloon.gd" id="1_36de5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
@@ -63,6 +63,12 @@ MarginContainer/constants/margin_right = 30
 MarginContainer/constants/margin_top = 15
 Panel/styles/panel = SubResource("StyleBoxFlat_uy0d5")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c1jyd"]
+bg_color = Color(0.0807833, 0.0807834, 0.0807833, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tujpf"]
+bg_color = Color(0.00952043, 0.225253, 0.339207, 1)
+
 [node name="ExampleBalloon" type="CanvasLayer"]
 layer = 100
 script = ExtResource("1_36de5")
@@ -91,6 +97,7 @@ offset_bottom = -19.0
 grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_c1jyd")
 
 [node name="Dialogue" type="MarginContainer" parent="Balloon/Panel"]
 layout_mode = 1
@@ -143,6 +150,10 @@ response_template = NodePath("ResponseExample")
 
 [node name="ResponseExample" type="Button" parent="Balloon/Responses/ResponsesMenu"]
 layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxFlat_tujpf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tujpf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tujpf")
+theme_override_styles/normal = SubResource("StyleBoxFlat_tujpf")
 text = "Response example"
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
