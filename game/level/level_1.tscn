@@ -13,6 +13,7 @@ grow_vertical = 2
 script = ExtResource("1_f4g35")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,6 +23,7 @@ grow_vertical = 2
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
 handle_input_locally = false
+canvas_item_default_texture_filter = 0
 size = Vector2i(1280, 720)
 size_2d_override = Vector2i(640, 360)
 size_2d_override_stretch = true

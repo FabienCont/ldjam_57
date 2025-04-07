@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://cgqiojgr6cr1o"]
+[gd_scene load_steps=28 format=4 uid="uid://cgqiojgr6cr1o"]
 
 [ext_resource type="PackedScene" uid="uid://d3vdr5j6nw03q" path="res://addons/JamStarterPack/scripts/cameras/Shakeable_camera.tscn" id="1_llnm3"]
 [ext_resource type="PackedScene" uid="uid://12kb1fania06" path="res://game/components/starting_bed/starting_bed.tscn" id="2_tal83"]
@@ -97,8 +97,6 @@ sources/0 = SubResource("TileSetAtlasSource_kixgb")
 [sub_resource type="TileMapPattern" id="TileMapPattern_t3gcp"]
 tile_data = PackedInt32Array(0, 524288, 2, 65536, 524288, 3, 131072, 524288, 4, 196608, 524288, 5, 1, 589824, 2, 65537, 589824, 3, 131073, 589824, 4, 196609, 589824, 5, 2, 655360, 2, 65538, 655360, 3, 131074, 655360, 4, 196610, 655360, 5, 3, 720896, 2, 65539, 720896, 3, 131075, 720896, 4, 196611, 720896, 5)
 
-[sub_resource type="TileMapPattern" id="TileMapPattern_f7ptc"]
-
 [sub_resource type="TileMapPattern" id="TileMapPattern_h72sl"]
 tile_data = PackedInt32Array(0, 917504, 2, 65536, 917504, 3, 131072, 917504, 4, 196608, 917504, 5, 1, 983040, 2, 65537, 983040, 3, 131073, 983040, 4, 196609, 983040, 5)
 
@@ -186,9 +184,8 @@ texture = ExtResource("7_mcqh5")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_h72sl")
 pattern_0 = SubResource("TileMapPattern_t3gcp")
-pattern_1 = SubResource("TileMapPattern_f7ptc")
-pattern_2 = SubResource("TileMapPattern_h72sl")
-pattern_3 = SubResource("TileMapPattern_sldr2")
+pattern_1 = SubResource("TileMapPattern_h72sl")
+pattern_2 = SubResource("TileMapPattern_sldr2")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bhsy6"]
 texture = ExtResource("8_2xs70")
