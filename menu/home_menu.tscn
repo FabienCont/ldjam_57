@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://b0et8ffe3s2f4"]
+[gd_scene load_steps=7 format=3 uid="uid://b0et8ffe3s2f4"]
 
 [ext_resource type="Script" uid="uid://dirxdfx3ls4l" path="res://scripts/menu/button_quit.gd" id="1_6nmg4"]
 [ext_resource type="PackedScene" uid="uid://c6c1yg0edb1lg" path="res://game/backgrounds/background_home_menu.tscn" id="1_j2n2p"]
+[ext_resource type="Script" uid="uid://c6tjm2l11g3ne" path="res://menu/home_menu.gd" id="1_mcr0h"]
 [ext_resource type="Script" uid="uid://f2knvirkp3ic" path="res://scripts/menu/button_play.gd" id="1_npl8f"]
 [ext_resource type="Theme" uid="uid://de2fw7xb42v13" path="res://game/game_theme.tres" id="2_8jq1a"]
 [ext_resource type="Texture2D" uid="uid://cam53b04tjptu" path="res://assets/sprites/Moon.aseprite" id="5_n16gg"]
@@ -15,6 +16,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+script = ExtResource("1_mcr0h")
 
 [node name="ColorRect" parent="." instance=ExtResource("1_j2n2p")]
 layout_mode = 1

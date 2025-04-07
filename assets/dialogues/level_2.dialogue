@@ -1,0 +1,12 @@
+~ start
+Me: Here again ?
+Me: What's happening.
+=> END
+
+~ shutdown
+do GameStateAutoload.data.level.shutdown_light()
+Me: Is there any way to stop this ?
+do GameStateAutoload.data.level.turn_on_light_torch()
+Me: I heared some weird sounds in the corridor.
+=> END
+

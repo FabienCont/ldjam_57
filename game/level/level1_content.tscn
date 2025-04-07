@@ -1,10 +1,11 @@
-[gd_scene load_steps=29 format=4 uid="uid://dgdr3g0ihdxt4"]
+[gd_scene load_steps=30 format=4 uid="uid://dgdr3g0ihdxt4"]
 
 [ext_resource type="PackedScene" uid="uid://d3vdr5j6nw03q" path="res://addons/JamStarterPack/scripts/cameras/Shakeable_camera.tscn" id="1_t3gcp"]
 [ext_resource type="PackedScene" uid="uid://cnqk7uwb6m4iq" path="res://game/components/exit_scene/exit_scene.tscn" id="2_fxv71"]
 [ext_resource type="PackedScene" uid="uid://12kb1fania06" path="res://game/components/starting_bed/starting_bed.tscn" id="2_h72sl"]
 [ext_resource type="PackedScene" uid="uid://2og61uptxwg2" path="res://game/components/player/player.tscn" id="2_pyc3k"]
 [ext_resource type="Script" uid="uid://cedujypwlgfqo" path="res://game/components/lights/torch_point_light_2d.gd" id="3_fxv71"]
+[ext_resource type="PackedScene" uid="uid://dl4xicn465c7i" path="res://game/level/level_2.tscn" id="4_l0868"]
 [ext_resource type="Texture2D" uid="uid://dabi7ierwwjrd" path="res://assets/sprites/light_mask.aseprite" id="4_nn554"]
 [ext_resource type="Texture2D" uid="uid://sq2jtmwp6eth" path="res://assets/sprites/tilemap.aseprite" id="5_f7ptc"]
 [ext_resource type="Texture2D" uid="uid://37xbkw2ywkpj" path="res://assets/sprites/torch_light_mask.aseprite" id="5_pyc3k"]
@@ -415,10 +416,11 @@ node_to_follow = NodePath("../Player")
 z_index = 1
 position = Vector2(353, 95)
 
-[node name="ExitScene2" parent="ProxyLevel" instance=ExtResource("2_fxv71")]
+[node name="ExitScene" parent="ProxyLevel" instance=ExtResource("2_fxv71")]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(1081, 261)
+next_scene = ExtResource("4_l0868")
 
 [node name="EventTriggerArea2D" parent="ProxyLevel" instance=ExtResource("9_nn554")]
 z_index = 3
@@ -494,6 +496,7 @@ energy = 0.0
 blend_mode = 1
 
 [node name="Enemies" type="Node2D" parent="ProxyLevel"]
+visible = false
 y_sort_enabled = true
 
 [node name="Path2D" type="Path2D" parent="ProxyLevel/Enemies"]

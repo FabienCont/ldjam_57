@@ -1,12 +1,12 @@
 ~ start
-Me: Weird, i don't remember falling asleep here.
-Me: i should figure out where i am.
+Me: Weird, I don't remember falling asleep here.
+Me: I should figure out where i am.
 => END
 
 ~ shutdown
 do GameStateAutoload.data.level.shutdown_light()
 Me: Oh come on, no lights now ?
-Me: Fortunately i always keep my light torch on me.
+Me: Fortunately, I always keep my light torch on me.
 do GameStateAutoload.data.level.turn_on_light_torch()
 Me: Let's continue.
 => END

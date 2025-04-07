@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://c15y3jhc2khp0"]
+[gd_scene load_steps=7 format=3 uid="uid://c15y3jhc2khp0"]
 
 [ext_resource type="PackedScene" uid="uid://c6c1yg0edb1lg" path="res://game/backgrounds/background_home_menu.tscn" id="1_ex38v"]
+[ext_resource type="Script" uid="uid://bh605fuoevw3a" path="res://menu/end_menu.gd" id="1_yguqc"]
 [ext_resource type="FontFile" uid="uid://beyahsas7qonv" path="res://assets/fonts/Kenney Future Square.ttf" id="2_ca6vg"]
 [ext_resource type="Theme" uid="uid://de2fw7xb42v13" path="res://game/game_theme.tres" id="2_glvyu"]
 [ext_resource type="Script" uid="uid://f2knvirkp3ic" path="res://scripts/menu/button_play.gd" id="3_pthm5"]
@@ -15,6 +16,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+script = ExtResource("1_yguqc")
 
 [node name="ColorRect" parent="." instance=ExtResource("1_ex38v")]
 layout_mode = 1
@@ -38,6 +40,14 @@ size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("2_ca6vg")
 theme_override_font_sizes/font_size = 32
 text = "Thanks for playing"
+
+[node name="Label2" type="Label" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_ca6vg")
+theme_override_font_sizes/font_size = 32
+text = "
+Have A good Night"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer"]
 layout_mode = 2

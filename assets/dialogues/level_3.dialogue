@@ -1,0 +1,13 @@
+~ start
+Me: Am i tripping ?
+Me: or in hell ?
+=> END
+
+~ shutdown
+Me: I can turn on my light, i know your little tricks now.
+do GameStateAutoload.data.level.turn_on_light_torch()
+Me: Here i am.
+do GameStateAutoload.data.level.shutdown_light()
+Me: Let's find the exit.
+=> END
+

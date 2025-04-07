@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EnemyInfo" load_steps=5 format=3 uid="uid://cobmks18qvbkj"]
+
+[ext_resource type="Resource" uid="uid://cgg8u6yqw648n" path="res://resources/stats/GhostEnemyStatData.tres" id="1_0pfa7"]
+[ext_resource type="Resource" uid="uid://cr1uj5vac2of1" path="res://game/components/logicComponents/GhostEnemyLogicComponent.tres" id="2_txqxi"]
+[ext_resource type="Script" uid="uid://dj7wumvtngdpy" path="res://resources/enemyInfo/enemyInfo.gd" id="3_gkivp"]
+[ext_resource type="PackedScene" uid="uid://byosapnteelub" path="res://assets/sprites/unkown_monster.aseprite" id="4_bipbe"]
+
+[resource]
+script = ExtResource("3_gkivp")
+name = "ghost"
+sprite = ExtResource("4_bipbe")
+logic_component = ExtResource("2_txqxi")
+enemyStatData = ExtResource("1_0pfa7")
+metadata/_custom_type_script = "uid://dj7wumvtngdpy"
