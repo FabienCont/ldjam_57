@@ -1,5 +1,6 @@
-extends Node
-class_name FollowTargetComponent2D
+extends NavigationAgent2D
+
+class_name  EnemyNavigationAgent2D
 
 @export var velocity_component: VelocityComponent2D
 @export var target: Node2D
@@ -20,5 +21,8 @@ func update_look_at_direction(node:Node2D):
 
 func follow_target(node: Node2D,delta: float):
 	if target != null && velocity_component != null:
+		target_position = target.position
 		update_look_at_direction(node)
-		velocity_component.accelerate_in_direction(direction,delta)
+		var position = get_next_path_position() 
+		#print(
+		velocity_component.accelerate_in_direction((position-node.global_position ).normalized(),delta)

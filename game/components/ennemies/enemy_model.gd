@@ -3,9 +3,9 @@ extends Entity
 class_name EnemyModel
 
 @export var target :Node2D  
-@onready var followTargetComponent: FollowTargetComponent2D = $FollowTargetComponent2D
-@onready var hitbox_component: HitboxComponent2D = $HitboxComponent2D
 @export var enemy_info: EnemyInfo
+@onready var followTargetComponent: EnemyNavigationAgent2D = $NavigationAgent2D
+@onready var hitbox_component: HitboxComponent2D = $HitboxComponent2D
 
 func _ready() -> void: 
 	if enemy_info :

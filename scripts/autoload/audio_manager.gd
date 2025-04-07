@@ -35,6 +35,9 @@ func playEnemiesImpactSound():
 	
 func playGoToSleepSound():
 	pass
+
+func playImpactSound():
+	pass
 	
 func get_audio_queue_by_name(audio_name: String) -> AudioQueue :
 	return _audioQueuesByName[audio_name]

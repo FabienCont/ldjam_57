@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://dwc1dlwxcotey"
+path="res://.godot/imported/hit_by_enemy.dialogue-2f3850d8c12db1bfa7af4865baa9aea1.tres"
+
+[deps]
+
+source_file="res://assets/dialogues/hit_by_enemy.dialogue"
+dest_files=["res://.godot/imported/hit_by_enemy.dialogue-2f3850d8c12db1bfa7af4865baa9aea1.tres"]
+
+[params]
+
+defaults=true

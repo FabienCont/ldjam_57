@@ -3,7 +3,8 @@ extends Node
 var data = {
 	"max_score":0,
 	"want_to_sleep":false,
-	"level":null
+	"level":null,
+	"level_name":"undefined"
 }
 
 func _init() -> void:

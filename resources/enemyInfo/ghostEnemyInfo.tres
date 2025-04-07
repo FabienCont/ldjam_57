@@ -3,9 +3,10 @@
 [ext_resource type="Resource" uid="uid://cr1uj5vac2of1" path="res://game/components/logicComponents/GhostEnemyLogicComponent.tres" id="1_j82c7"]
 [ext_resource type="Script" uid="uid://dj7wumvtngdpy" path="res://resources/enemyInfo/enemyInfo.gd" id="1_kkp54"]
 [ext_resource type="Resource" uid="uid://cgg8u6yqw648n" path="res://resources/stats/GhostEnemyStatData.tres" id="1_yswvd"]
-[ext_resource type="PackedScene" uid="uid://de6pr8p7p5yjf" path="res://assets/sprites/ghost_hero.aseprite" id="4_byeyj"]
+[ext_resource type="PackedScene" uid="uid://byosapnteelub" path="res://assets/sprites/unkown_monster.aseprite" id="4_byeyj"]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("1_kkp54")
 name = "ghost"
 sprite = ExtResource("4_byeyj")

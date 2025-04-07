@@ -1,34 +1,36 @@
 [gd_scene load_steps=9 format=3 uid="uid://cu1xp14rygso5"]
 
 [ext_resource type="Script" uid="uid://b6mu166lxnsgy" path="res://game/components/ennemies/enemy_model.gd" id="1_w3nyb"]
-[ext_resource type="Script" uid="uid://db7lxlraqg3iv" path="res://addons/JamStarterPack/components/2d/ia/FollowTargetComponent2D.gd" id="2_7ge3a"]
 [ext_resource type="Script" uid="uid://tnik6w2n0xij" path="res://addons/JamStarterPack/components/2d/physics/HitboxComponent2D.gd" id="3_o3b42"]
 [ext_resource type="Script" uid="uid://chsmenidovpat" path="res://addons/JamStarterPack/components/2d/physics/VelocityComponent2D.gd" id="4_cr6tt"]
 [ext_resource type="Script" uid="uid://bh24qve0k1v43" path="res://addons/JamStarterPack/components/2d/physics/HurtboxComponent2D.gd" id="5_abi2o"]
 [ext_resource type="Script" uid="uid://bsfa460cxgqqh" path="res://addons/JamStarterPack/components/HealthComponent.gd" id="6_im12u"]
+[ext_resource type="Script" uid="uid://c5ky3cexwojqn" path="res://game/components/ennemies/navigation_agent_enemy_2d.gd" id="7_yeg0m"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cr6tt"]
+radius = 20.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_im12u"]
+radius = 5.0
 
 [node name="EnemyModel" type="CharacterBody2D" groups=["Enemies"]]
 z_index = 1
 y_sort_enabled = true
+collision_layer = 17
+collision_mask = 17
+motion_mode = 1
+safe_margin = 5.0
 script = ExtResource("1_w3nyb")
 
-[node name="FollowTargetComponent2D" type="Node" parent="." node_paths=PackedStringArray("velocity_component")]
-script = ExtResource("2_7ge3a")
-velocity_component = NodePath("../VelocityComponent2D")
-metadata/_custom_type_script = "uid://db7lxlraqg3iv"
-
 [node name="HitboxComponent2D" type="Area2D" parent="."]
-collision_layer = 0
+collision_layer = 16
 collision_mask = 2
 script = ExtResource("3_o3b42")
 metadata/_custom_type_script = "uid://tnik6w2n0xij"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent2D"]
 shape = SubResource("CircleShape2D_cr6tt")
+debug_color = Color(0.995436, 0, 0.205275, 0.42)
 
 [node name="VelocityComponent2D" type="Node" parent="."]
 script = ExtResource("4_cr6tt")
@@ -47,3 +49,11 @@ metadata/_custom_type_script = "uid://bsfa460cxgqqh"
 [node name="SpriteComponent" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
 position = Vector2(0, -32)
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." node_paths=PackedStringArray("velocity_component")]
+avoidance_enabled = true
+radius = 32.0
+script = ExtResource("7_yeg0m")
+velocity_component = NodePath("../VelocityComponent2D")
+
+[connection signal="body_shape_entered" from="HitboxComponent2D" to="HitboxComponent2D" method="_on_body_shape_entered"]

@@ -1,5 +1,6 @@
-[gd_scene load_steps=30 format=4 uid="uid://dgdr3g0ihdxt4"]
+[gd_scene load_steps=27 format=4 uid="uid://dgdr3g0ihdxt4"]
 
+[ext_resource type="Script" uid="uid://bbq6ovqt2gws2" path="res://game/level/level_1_content.gd" id="1_b7buw"]
 [ext_resource type="PackedScene" uid="uid://d3vdr5j6nw03q" path="res://addons/JamStarterPack/scripts/cameras/Shakeable_camera.tscn" id="1_t3gcp"]
 [ext_resource type="PackedScene" uid="uid://cnqk7uwb6m4iq" path="res://game/components/exit_scene/exit_scene.tscn" id="2_fxv71"]
 [ext_resource type="PackedScene" uid="uid://12kb1fania06" path="res://game/components/starting_bed/starting_bed.tscn" id="2_h72sl"]
@@ -13,67 +14,6 @@
 [ext_resource type="Resource" uid="uid://mtignv746mov" path="res://scripts/effects/TriggerShutdownEffect.tres" id="8_t3gcp"]
 [ext_resource type="Texture2D" uid="uid://b7b6urmmrkjqo" path="res://assets/sprites/Props.aseprite" id="9_f7ptc"]
 [ext_resource type="PackedScene" uid="uid://ca6onb6i3k8bs" path="res://game/components/EventTrigger/event_trigger_area_2d.tscn" id="9_nn554"]
-[ext_resource type="PackedScene" uid="uid://cu1xp14rygso5" path="res://game/components/ennemies/EnemyModel.tscn" id="13_sldr2"]
-[ext_resource type="Resource" uid="uid://c4cpvkpfjsjnu" path="res://resources/enemyInfo/ghostEnemyInfo.tres" id="14_b7buw"]
-
-[sub_resource type="GDScript" id="GDScript_t3gcp"]
-script/source = "extends Node2D
-
-@onready var proxyLevel= $ProxyLevel
-@onready var player = $ProxyLevel/Player
-@onready var enemies = $ProxyLevel/Enemies
-@onready var playerLightTorch = $ProxyLevel/Player/LightTorch2DPivot/LightTorch2D
-@onready var playerLight2D = $ProxyLevel/Player/PlayerLight2D
-@onready var directionalLightOff = $ProxyLevel/DirectionalLight2D
-
-func _ready() -> void:
-	GameStateAutoload.data.level = self
-	await get_tree().create_timer(0.5).timeout
-	GameSignalsAutoload.level_loaded.emit()
-	DialogueManager.show_dialogue_balloon(load(\"res://assets/dialogues/level_1.dialogue\"), \"start\")
-	
-func shutdown_light() -> void:
-	AudioManager.playBoomShutdownSound()
-	CameraUtils.shake_camera(self,5000)
-	await get_tree().create_timer(1.5).timeout
-	turn_off_light()
-
-func turn_on_light_torch() -> void:
-	playerLightTorch.show()
-	tween_element(playerLightTorch,\"energy\",0.6,0.6)
-
-func turn_off_light_torch() -> void:
-	var tween = tween_element(playerLightTorch,\"energy\",0.,0.6)
-	await tween.step_finished
-	playerLightTorch.hide()
-	
-func turn_off_light() -> void:
-	directionalLightOff.show()
-	var tween = tween_element(directionalLightOff,\"energy\",0.94,0.3)
-	await tween.step_finished
-	playerLight2D.show()
-	tween_element(playerLight2D,\"energy\",0.54,0.3)
-
-func tween_element(element:Node,property:String,value:float,time:float) -> Tween:
-	var tween = element.create_tween().set_ease(Tween.EASE_OUT_IN)
-	tween.tween_property(element,property,value,time).from_current()
-	return tween
-	
-func turn_on_light() -> void:
-	var tween = tween_element(directionalLightOff,\"energy\",0.,.6)
-	tween_element(playerLight2D,\"energy\",0.,.6)
-	await tween.step_finished
-	directionalLightOff.hide()
-	playerLight2D.hide()
-	
-func turn_off_input() -> void:
-	player.process_mode = ProcessMode.PROCESS_MODE_DISABLED
-	enemies.process_mode = ProcessMode.PROCESS_MODE_DISABLED
-	
-func turn_on_input() -> void:
-	player.process_mode = ProcessMode.PROCESS_MODE_INHERIT
-	enemies.process_mode = ProcessMode.PROCESS_MODE_INHERIT
-"
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_sldr2"]
 vertices = PackedVector2Array(711.922, -229.023, 707.07, 429.906, -399.039, 420.078, -401.953, -231.969)
@@ -400,11 +340,9 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_bhsy6")
 pattern_0 = SubResource("TileMapPattern_b7buw")
 
-[sub_resource type="Curve2D" id="Curve2D_b7buw"]
-
 [node name="Level" type="Node2D"]
 y_sort_enabled = true
-script = SubResource("GDScript_t3gcp")
+script = ExtResource("1_b7buw")
 
 [node name="ProxyLevel" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -461,8 +399,6 @@ metadata/_edit_lock_ = true
 [node name="Player" parent="ProxyLevel" instance=ExtResource("2_pyc3k")]
 z_index = 1
 position = Vector2(304, 90)
-collision_layer = 3
-collision_mask = 3
 
 [node name="PlayerLight2D" type="PointLight2D" parent="ProxyLevel/Player"]
 visible = false
@@ -498,11 +434,3 @@ blend_mode = 1
 [node name="Enemies" type="Node2D" parent="ProxyLevel"]
 visible = false
 y_sort_enabled = true
-
-[node name="Path2D" type="Path2D" parent="ProxyLevel/Enemies"]
-curve = SubResource("Curve2D_b7buw")
-
-[node name="EnemyModel" parent="ProxyLevel/Enemies" node_paths=PackedStringArray("target") instance=ExtResource("13_sldr2")]
-position = Vector2(-687, 473)
-target = NodePath("../../Player")
-enemy_info = ExtResource("14_b7buw")

@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="HurtEffectSleepPlayer" load_steps=2 format=3 uid="uid://bvj8n8wl02wud"]
+
+[ext_resource type="Script" uid="uid://b3hp0ajnc3dnx" path="res://scripts/effects/HurtEffectSleepPlayer.gd" id="1_4q27m"]
+
+[resource]
+script = ExtResource("1_4q27m")
+metadata/_custom_type_script = "uid://b3hp0ajnc3dnx"

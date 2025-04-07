@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://2og61uptxwg2"]
+[gd_scene load_steps=15 format=3 uid="uid://2og61uptxwg2"]
 
 [ext_resource type="Script" uid="uid://bsfa460cxgqqh" path="res://addons/JamStarterPack/components/HealthComponent.gd" id="1_ifo1v"]
 [ext_resource type="Script" uid="uid://dayjyc66fjj48" path="res://game/components/player/player.gd" id="1_rn0mg"]
@@ -7,6 +7,7 @@
 [ext_resource type="Resource" uid="uid://dhsylxn5mnnjx" path="res://resources/stats/PlayerStats.tres" id="3_lbxq0"]
 [ext_resource type="Script" uid="uid://1x0rkunno7ts" path="res://addons/JamStarterPack/components/2d/controllers/TopDownControllerComponent2D.gd" id="3_y8tf5"]
 [ext_resource type="Script" uid="uid://bh24qve0k1v43" path="res://addons/JamStarterPack/components/2d/physics/HurtboxComponent2D.gd" id="4_bylo4"]
+[ext_resource type="Resource" uid="uid://bvj8n8wl02wud" path="res://scripts/effects/HurtEffectResourceSleepPlayer.tres" id="4_pox1p"]
 [ext_resource type="Script" uid="uid://bd8unst3tp6bu" path="res://addons/JamStarterPack/components/2d/physics/InteractionComponent2D.gd" id="5_y8tf5"]
 [ext_resource type="PackedScene" uid="uid://2n7i3ur3k6kd" path="res://assets/sprites/temp_hero.aseprite" id="6_gnnbm"]
 [ext_resource type="Script" uid="uid://ca7bvpda81pr1" path="res://addons/JamStarterPack/components/2d/physics/CollectorComponent2D.gd" id="6_otxdc"]
@@ -23,9 +24,14 @@ radius = 16.0
 
 [node name="Player" type="CharacterBody2D"]
 y_sort_enabled = true
+collision_layer = 3
+collision_mask = 17
+motion_mode = 1
+safe_margin = 5.0
 script = ExtResource("1_rn0mg")
 player_info = ExtResource("2_ia325")
 playerStats = ExtResource("3_lbxq0")
+hurt_effects = Array[Resource]([ExtResource("4_pox1p")])
 
 [node name="HealthComponent" type="Node" parent="."]
 script = ExtResource("1_ifo1v")
@@ -41,6 +47,7 @@ metadata/_custom_type_script = "uid://1x0rkunno7ts"
 
 [node name="HurtboxComponent2D" type="CollisionShape2D" parent="." node_paths=PackedStringArray("health_component")]
 shape = SubResource("CapsuleShape2D_gnnbm")
+debug_color = Color(0.932052, 2.84934e-05, 0.650298, 0.42)
 script = ExtResource("4_bylo4")
 health_component = NodePath("../HealthComponent")
 metadata/_custom_type_script = "uid://bh24qve0k1v43"
