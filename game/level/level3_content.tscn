@@ -674,21 +674,21 @@ y_sort_enabled = true
 curve = SubResource("Curve2D_b7buw")
 
 [node name="EnemyModel" parent="ProxyLevel/Enemies" node_paths=PackedStringArray("target") instance=ExtResource("13_dpvkm")]
-position = Vector2(1081, 1237)
+position = Vector2(847, 637)
 target = NodePath("../../Player")
 enemy_info = SubResource("Resource_qhdfp")
 
 [node name="EnemyModel2" parent="ProxyLevel/Enemies" node_paths=PackedStringArray("target") instance=ExtResource("13_dpvkm")]
-position = Vector2(1235, 1201)
+position = Vector2(1001, 72)
 target = NodePath("../../Player")
 enemy_info = SubResource("Resource_rndtq")
 
 [node name="EnemyModel3" parent="ProxyLevel/Enemies" node_paths=PackedStringArray("target") instance=ExtResource("13_dpvkm")]
-position = Vector2(1150, 1297)
+position = Vector2(166, 646)
 target = NodePath("../../Player")
 enemy_info = SubResource("Resource_1f6l5")
 
 [node name="EnemyModel4" parent="ProxyLevel/Enemies" node_paths=PackedStringArray("target") instance=ExtResource("13_dpvkm")]
-position = Vector2(1148, 1214)
+position = Vector2(1871, 69)
 target = NodePath("../../Player")
 enemy_info = SubResource("Resource_qio0e")

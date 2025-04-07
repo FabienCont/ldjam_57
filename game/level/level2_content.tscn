@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://cgqiojgr6cr1o"]
+[gd_scene load_steps=49 format=4 uid="uid://cgqiojgr6cr1o"]
 
 [ext_resource type="Script" uid="uid://c4k6aofvlotd1" path="res://game/level/level_2_content.gd" id="1_2l5r6"]
 [ext_resource type="PackedScene" uid="uid://d3vdr5j6nw03q" path="res://addons/JamStarterPack/scripts/cameras/Shakeable_camera.tscn" id="1_llnm3"]
@@ -15,7 +15,9 @@
 [ext_resource type="Script" uid="uid://cedujypwlgfqo" path="res://game/components/lights/torch_point_light_2d.gd" id="11_lgem2"]
 [ext_resource type="Texture2D" uid="uid://dabi7ierwwjrd" path="res://assets/sprites/light_mask.aseprite" id="12_5ixni"]
 [ext_resource type="PackedScene" uid="uid://cu1xp14rygso5" path="res://game/components/ennemies/EnemyModel.tscn" id="13_vd14o"]
-[ext_resource type="Resource" uid="uid://cobmks18qvbkj" path="res://resources/enemyInfo/GhoulEnemyInfo.tres" id="15_2l5r6"]
+[ext_resource type="Script" uid="uid://bbdacp70csf2j" path="res://resources/stats/EnemyStatsData.gd" id="16_nbknc"]
+[ext_resource type="Script" uid="uid://da5jn1s3od7db" path="res://game/components/logicComponents/EnemyLogicComponent.gd" id="17_klu3e"]
+[ext_resource type="Script" uid="uid://dj7wumvtngdpy" path="res://resources/enemyInfo/enemyInfo.gd" id="19_1b1nh"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_sldr2"]
 vertices = PackedVector2Array(61, 369.047, 61, 416.547, 49, 416.453, 49, 337.047, 1057, -58, 1057, -74, 1277, -74, 1277, 226, 1095.27, 226, 1095.27, 278, 1277, 278, 1277, 310, 657, 418, 657, 369.047, 2077, 310, 2077, 418, -335, 337.047, -335, 118, 29, 150, 29, 118, 61, 150, 61, 182, 93, 182, 93, 214, 189, 214, 189, 278, 583.688, 226, 369, 226, 369, 22, 637, 22, 637, 226, 615.273, 226, 583.688, 278, 615.273, 278, 1063.69, 226, 849, 226, 849, -58, 881, -58, 881, -74, 973, -74, 973, -58, 1063.69, 278)
@@ -341,6 +343,178 @@ sources/0 = SubResource("TileSetAtlasSource_bhsy6")
 
 [sub_resource type="Curve2D" id="Curve2D_b7buw"]
 
+[sub_resource type="Resource" id="Resource_nbknc"]
+script = ExtResource("16_nbknc")
+life = 100.0
+max_life = 100.0
+collector_distance = 10.0
+visibility = 100.0
+level = 1.0
+movement_speed = 26.0
+acceleration = 800.0
+attack_speed = 1.0
+metadata/_custom_type_script = "uid://bbdacp70csf2j"
+
+[sub_resource type="Resource" id="Resource_klu3e"]
+script = ExtResource("17_klu3e")
+distance_before_attack = 25.0
+metadata/_custom_type_script = "uid://da5jn1s3od7db"
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_umjhg"]
+_data = PackedByteArray("AAADAAUAAAABAAAAcAAAAIEAAAByBAAAUklGRmoEAABXRUJQVlA4TF0EAAAvbwAgEDegppEU6Kq3wr8jJKAEK2QiGD8Z9ZBaLmWcggAgEN3+L7LFjfkPAKhQ9/n6qO25PVCIgDdsc4WCThgGQPediuAvgWUygKer+GOwZTm1H4CI/jtwG0mR3Hu4B1n6BI0RgGnM7grBmD0VtIpI9lSIR4ALowKbKqLPXCE7K7yZxetUxedIRVifF++vQBInKpr92s+5Cvt/V/h4obS/QrydqkCzf5srivy3/R2pIDczHKlARPCRCkK8TlWAqQRsrKAF3lQhALCq4D0VQISirmjgHRXwCDNFXWE7KqSzUYG6QjdUQCNXaF1h+LpCHNGSD5cV5t9XtIVWNH1dAUVEVleYf13hkBlSxezbCmksnuCjXFWof1uBxpR2lyIsV6T67yvcmMQ7oE0V0bo9FYQ+A4p63VQxVt0I0yTVzxX0uKLkuWlkiMpUIS03rQprPLuVb6aa84NCNO6BieQKuiE9JFUU5gqbC6UGSViUOuSmCVaFGWU8QcKDK2W8LLwz6bRXJCMkVWTS6aqwMNJBM3SgQhtNq0Ka6VwhSjcnNHs9KgSnPIw9nSoEhG6q8LlpUZgmuZXydMgBFxElrrQqLBNBM/ThAkmqKKuY1olTX8QLSdG0KqwiPAKYefSFhzkDvCjkQvSZIcw+kTxoklWFN7N4lSxbNT2t+My8dR/UPk8LJazPi2uvYdX0uCIycfsx+2+GqulBhTT7tZ+FX51VTY8rbILxwnhYNX1fERv5KFQqKt5/2arpQYV4KxHa3ztbNT2pQLN/FWlmmsxNXxT62/7KiogXDUXT40JyMwOVC5Kq6XEhIoIrACVV07KwzHjVOFs1PawA6gZwsmp6WlHECzwauMaLwsWOrDIQ0fI+v1ZNTyowGsFTUaRzCt2q6UEFPKI4rPDEhlXTukI6mzaNxHOEOdO1alpXQCMnJq1UNj0qdESbEkeSR5utmtYVreaYYWjfFEIRMZPGSNSVr1XTssIhMxAaS1qBML4WTctCyYXTprkxoVO0btW0qkBLhXnTEkGfDtei6VlhtKFltxLdCNNr1fSowlveJah4t2p6UkFIE6apaazi4VHTunDaNLRxx6IsplfdlI0MUfEadzKAREkMJZ7dyjdT2rKCTJgw8LVqQktbLMo0F+oEcid3p3wtmxIWJRJDRhkneSXoWjVN0KXCTMYWME04WTXJnaQQzaZ0ECFtP5j6XKumGToQzTTJLUTJqiltvdLNGTglQOdMAZBVTTw60GHaBzSF0F3AmKzPXTRdX00niHhlO2c8evSFTwizT5xiR3jrPthPstcJ9mP23zG/egDGCzvztWPc3n9HENrf+wxpZnqGR7xou2nBIQCdwmegD58AeDTwfoKIZob9gHEzxW7inth+zcMG582gp/j49gnSeIa90Hj6mitv5caSViBsO0KnaAcI+nTYz5huhOl2dGvnm6F1YlDaTbrxoCRnYMBed3Knnz9F96IMTILd129G+40R7YhOACUXAA==")
+size_override = Vector2(112, 129)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_quple"]
+atlas = SubResource("PortableCompressedTexture2D_umjhg")
+region = Rect2(0, 0, 28, 45)
+margin = Rect2(1, 19, 4, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ymrlv"]
+atlas = SubResource("PortableCompressedTexture2D_umjhg")
+region = Rect2(56, 0, 28, 44)
+margin = Rect2(1, 20, 4, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6lief"]
+atlas = SubResource("PortableCompressedTexture2D_umjhg")
+region = Rect2(0, 45, 28, 44)
+margin = Rect2(1, 20, 4, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bxnaf"]
+atlas = SubResource("PortableCompressedTexture2D_umjhg")
+region = Rect2(28, 0, 28, 45)
+margin = Rect2(1, 19, 4, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwbgv"]
+atlas = SubResource("PortableCompressedTexture2D_umjhg")
+region = Rect2(56, 44, 28, 44)
+margin = Rect2(1, 20, 4, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p16dh"]
+atlas = SubResource("PortableCompressedTexture2D_umjhg")
+region = Rect2(84, 43, 26, 43)
+margin = Rect2(2, 21, 6, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pr5bv"]
+atlas = SubResource("PortableCompressedTexture2D_umjhg")
+region = Rect2(28, 45, 28, 43)
+margin = Rect2(1, 20, 4, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxadw"]
+atlas = SubResource("PortableCompressedTexture2D_umjhg")
+region = Rect2(84, 86, 26, 43)
+margin = Rect2(2, 21, 6, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qf5r3"]
+atlas = SubResource("PortableCompressedTexture2D_umjhg")
+region = Rect2(84, 0, 28, 43)
+margin = Rect2(1, 20, 4, 21)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nk6r7"]
+animations = [{
+"frames": [{
+"duration": 0.25,
+"texture": SubResource("AtlasTexture_quple")
+}, {
+"duration": 0.25,
+"texture": SubResource("AtlasTexture_ymrlv")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 0.15,
+"texture": SubResource("AtlasTexture_6lief")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_bxnaf")
+}],
+"loop": false,
+"name": &"Jump",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 0.1,
+"texture": SubResource("AtlasTexture_iwbgv")
+}, {
+"duration": 0.2,
+"texture": SubResource("AtlasTexture_p16dh")
+}, {
+"duration": 0.2,
+"texture": SubResource("AtlasTexture_pr5bv")
+}, {
+"duration": 0.2,
+"texture": SubResource("AtlasTexture_lxadw")
+}, {
+"duration": 0.2,
+"texture": SubResource("AtlasTexture_qf5r3")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 1.0
+}]
+
+[sub_resource type="PackedScene" id="PackedScene_mcqh5"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"names": PackedStringArray("unkown_monster", "sprite_frames", "animation", "AnimatedSprite2D"),
+"node_count": 1,
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 3, 0, -1, 2, 1, 0, 2, 1, 0),
+"variants": [SubResource("SpriteFrames_nk6r7"), &"Idle"],
+"version": 3
+}
+
+[sub_resource type="Resource" id="Resource_2xs70"]
+resource_local_to_scene = true
+script = ExtResource("19_1b1nh")
+name = "ghost"
+sprite = SubResource("PackedScene_mcqh5")
+logic_component = SubResource("Resource_klu3e")
+enemyStatData = SubResource("Resource_nbknc")
+metadata/_custom_type_script = "uid://dj7wumvtngdpy"
+
+[sub_resource type="Resource" id="Resource_tsubx"]
+script = ExtResource("16_nbknc")
+life = 100.0
+max_life = 100.0
+collector_distance = 10.0
+visibility = 100.0
+level = 1.0
+movement_speed = 26.0
+acceleration = 800.0
+attack_speed = 1.0
+metadata/_custom_type_script = "uid://bbdacp70csf2j"
+
+[sub_resource type="Resource" id="Resource_1b1nh"]
+script = ExtResource("17_klu3e")
+distance_before_attack = 25.0
+metadata/_custom_type_script = "uid://da5jn1s3od7db"
+
+[sub_resource type="PackedScene" id="PackedScene_lgem2"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"names": PackedStringArray("unkown_monster", "sprite_frames", "animation", "AnimatedSprite2D"),
+"node_count": 1,
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 3, 0, -1, 2, 1, 0, 2, 1, 0),
+"variants": [SubResource("SpriteFrames_nk6r7"), &"Idle"],
+"version": 3
+}
+
+[sub_resource type="Resource" id="Resource_5ixni"]
+resource_local_to_scene = true
+script = ExtResource("19_1b1nh")
+name = "ghost"
+sprite = SubResource("PackedScene_lgem2")
+logic_component = SubResource("Resource_1b1nh")
+enemyStatData = SubResource("Resource_tsubx")
+metadata/_custom_type_script = "uid://dj7wumvtngdpy"
+
 [node name="Level" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_2l5r6")
@@ -446,9 +620,9 @@ curve = SubResource("Curve2D_b7buw")
 [node name="EnemyModel2" parent="ProxyLevel/Enemies" node_paths=PackedStringArray("target") instance=ExtResource("13_vd14o")]
 position = Vector2(-1088, 304)
 target = NodePath("../../Player")
-enemy_info = ExtResource("15_2l5r6")
+enemy_info = SubResource("Resource_2xs70")
 
 [node name="EnemyModel" parent="ProxyLevel/Enemies" node_paths=PackedStringArray("target") instance=ExtResource("13_vd14o")]
-position = Vector2(998, 482)
+position = Vector2(948, 508)
 target = NodePath("../../Player")
-enemy_info = ExtResource("15_2l5r6")
+enemy_info = SubResource("Resource_5ixni")
