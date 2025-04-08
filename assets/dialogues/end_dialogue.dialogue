@@ -1,6 +1,6 @@
 ~ start
-Me: [[Should i sleep here ?| A bed in this place, i'm so tired]]
-- Go to sleep 
+Me: This is different this time
+- I want to wake up
 	Me: Finally I can rest in peace.
 	set GameStateAutoload.data.want_to_sleep = true
 => END
