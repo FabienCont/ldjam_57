@@ -2,6 +2,8 @@ extends Node2D
 
 @export var next_scene:PackedScene
 @export var dialogue:DialogueResource = load("res://assets/dialogues/exit_dialogue.dialogue")
+@export var dialogue_name:String = "start"
+
 @onready var area2d = $Area2D
 var deactivate = false
 
@@ -23,4 +25,4 @@ func _on_area_2d_body_entered(_body: Node2D) -> void:
 		return
 	deactivate = true
 	DialogueManager.dialogue_ended.connect(_on_dialogue_manager_dialogue_ended)
-	DialogueManager.show_dialogue_balloon(dialogue, "start")
+	DialogueManager.show_dialogue_balloon(dialogue, dialogue_name)

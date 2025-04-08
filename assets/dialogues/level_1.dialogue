@@ -6,7 +6,7 @@ Me: I should figure out where i am.
 ~ shutdown
 do GameStateAutoload.data.level.shutdown_light()
 Me: Oh come on, no lights now ?
-Me: Fortunately, I always keep my light torch on me.
+Me: Luckily, I always keep my light torch on me.
 do GameStateAutoload.data.level.turn_on_light_torch()
 Me: Let's continue.
 => END

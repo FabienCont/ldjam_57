@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="EventTriggerWakeUpEnemiesEffect" load_steps=2 format=3 uid="uid://cmruf5ciwhtoc"]
+
+[ext_resource type="Script" uid="uid://cybp0q8uu42g4" path="res://scripts/effects/EventTriggerWakeUpEnemiesEffect.gd" id="1_7vj2t"]
+
+[resource]
+script = ExtResource("1_7vj2t")
+metadata/_custom_type_script = "uid://cybp0q8uu42g4"

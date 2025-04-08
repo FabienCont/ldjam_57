@@ -9,10 +9,13 @@ extends Node2D
 
 func _ready() -> void:
 	GameStateAutoload.data.level = self
-	GameStateAutoload.data.level_name = "level_4"
+	GameStateAutoload.data.level_name = "level_0"
 	await get_tree().create_timer(0.5).timeout
 	GameSignalsAutoload.level_loaded.emit()
-	DialogueManager.show_dialogue_balloon(load("res://assets/dialogues/"+GameStateAutoload.data.level_name+".dialogue"), "start")
+	DialogueManager.show_dialogue_balloon(load("res://assets/dialogues/"+GameStateAutoload.data.level_name+".dialogue"), "home")
+	
+func restart_level() -> void:
+	SceneLoader.change_scene_to_packed(load("res://game/level/"+GameStateAutoload.data.level_name+".tscn"),SceneLoader.TransitionTypeEnum.LOADING_SCREEN)
 	
 func shutdown_light() -> void:
 	AudioManager.playBoomShutdownSound()
@@ -20,15 +23,12 @@ func shutdown_light() -> void:
 	await get_tree().create_timer(1.5).timeout
 	turn_off_light()
 
-func restart_level() -> void:
-	SceneLoader.change_scene_to_packed(load("res://game/level/"+GameStateAutoload.data.level_name+".tscn"),SceneLoader.TransitionTypeEnum.LOADING_SCREEN)
-
 func lose_level() -> void:
 	turn_off_light_torch()
 	DialogueManager.show_dialogue_balloon(load("res://assets/dialogues/hit_by_enemy.dialogue"), "start")
 	await DialogueManager.dialogue_ended
 	restart_level()
-
+	
 func turn_on_light_torch() -> void:
 	playerLightTorch.show()
 	tween_element(playerLightTorch,"energy",0.6,0.6)

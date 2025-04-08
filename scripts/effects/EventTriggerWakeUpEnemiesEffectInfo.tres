@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EffectInfo" load_steps=3 format=3 uid="uid://ccmn70rc6yxlp"]
+
+[ext_resource type="Script" uid="uid://ce2xaom5bvgkf" path="res://addons/JamStarterPack/resources/effects/EffectInfo.gd" id="1_04dpe"]
+[ext_resource type="Resource" uid="uid://cmruf5ciwhtoc" path="res://scripts/effects/EventTriggerWakeUpEnemiesEffect.tres" id="1_l3grt"]
+
+[resource]
+script = ExtResource("1_04dpe")
+name = "EventTriggerWakeUpEnemiesEffect"
+state = "undefined"
+handler = ExtResource("1_l3grt")
+metadata/_custom_type_script = "uid://ce2xaom5bvgkf"

@@ -1,0 +1,10 @@
+~ start
+Me: It's getting worse and worse.
+=> END
+
+~ shutdown
+do GameStateAutoload.data.level.shutdown_light()
+Me: ...
+do GameStateAutoload.data.level.turn_on_light_torch()
+=> END
+

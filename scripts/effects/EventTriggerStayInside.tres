@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="EventTriggerStayInsideEffect" load_steps=2 format=3 uid="uid://1pjo5rwfxuy"]
+
+[ext_resource type="Script" uid="uid://cb2w3m3flnl34" path="res://scripts/effects/TriggerStayInsideEffect.gd" id="1_cg7bu"]
+
+[resource]
+script = ExtResource("1_cg7bu")
+metadata/_custom_type_script = "uid://cb2w3m3flnl34"

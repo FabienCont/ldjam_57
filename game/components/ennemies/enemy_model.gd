@@ -22,6 +22,11 @@ func prepare_enemy() -> void :
 		followTargetComponent.set_node_to_follow(target)
 	set_sprite_component(enemy_info.sprite.instantiate() as AnimatedSprite2D)
 
+func set_follow_target(target_to_follow:Node2D):
+	target =target_to_follow;
+	if target_to_follow != null :
+		followTargetComponent.set_node_to_follow(target)
+		
 func init_enemy(enemy_info_init) -> void:
 	enemy_info = enemy_info_init
 	if is_node_ready():
