@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://5bvooripchp7"]
+[gd_scene load_steps=31 format=4 uid="uid://5bvooripchp7"]
 
 [ext_resource type="Script" uid="uid://b412tnkdo83lq" path="res://game/level/level_0_content.gd" id="1_0ikl4"]
 [ext_resource type="PackedScene" uid="uid://d3vdr5j6nw03q" path="res://addons/JamStarterPack/scripts/cameras/Shakeable_camera.tscn" id="2_2mwml"]
@@ -12,8 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://2og61uptxwg2" path="res://game/components/player/player.tscn" id="11_ylrpj"]
 [ext_resource type="Texture2D" uid="uid://37xbkw2ywkpj" path="res://assets/sprites/torch_light_mask.aseprite" id="12_vo0r6"]
 [ext_resource type="Script" uid="uid://cedujypwlgfqo" path="res://game/components/lights/torch_point_light_2d.gd" id="13_c0j0e"]
-[ext_resource type="Resource" uid="uid://m8ei467tbf74" path="res://scripts/effects/TriggerStayInsideResource.tres" id="14_0ikl4"]
+[ext_resource type="Script" uid="uid://cb2w3m3flnl34" path="res://scripts/effects/TriggerStayInsideEffect.gd" id="14_2mwml"]
 [ext_resource type="Texture2D" uid="uid://dabi7ierwwjrd" path="res://assets/sprites/light_mask.aseprite" id="14_7j4y1"]
+[ext_resource type="Script" uid="uid://ce2xaom5bvgkf" path="res://addons/JamStarterPack/resources/effects/EffectInfo.gd" id="15_hsp6t"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_sldr2"]
 vertices = PackedVector2Array(711.922, -229.023, 707.07, 429.906, -399.039, 420.078, -401.953, -231.969)
@@ -343,6 +344,17 @@ pattern_0 = SubResource("TileMapPattern_b7buw")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xk3yo"]
 size = Vector2(60, 50)
 
+[sub_resource type="Resource" id="Resource_ms5ds"]
+script = ExtResource("14_2mwml")
+metadata/_custom_type_script = "uid://cb2w3m3flnl34"
+
+[sub_resource type="Resource" id="Resource_j4qv2"]
+script = ExtResource("15_hsp6t")
+name = "StayInside"
+state = "undefined"
+handler = SubResource("Resource_ms5ds")
+metadata/_custom_type_script = "uid://ce2xaom5bvgkf"
+
 [node name="Level" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_0ikl4")
@@ -440,4 +452,4 @@ z_index = 3
 position = Vector2(92, 399)
 collision_layer = 2
 collision_mask = 2
-event_to_triggger = ExtResource("14_0ikl4")
+event_to_triggger = SubResource("Resource_j4qv2")

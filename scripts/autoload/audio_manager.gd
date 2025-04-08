@@ -25,18 +25,22 @@ func playChoiceButtonAudioQueue():
 	get_audio_queue_by_name("ChoiceButton").play_audio()
 
 func playFootstepSound():
+	get_audio_queue_by_name("footsteps").play_audio()
 	pass
 
 func playBoomShutdownSound():
+	get_audio_queue_by_name("boom").play_audio()
 	pass
 
 func playEnemiesImpactSound():
 	pass
 	
 func playGoToSleepSound():
+	get_audio_queue_by_name("sleep").play_audio()
 	pass
 
 func playImpactSound():
+	get_audio_queue_by_name("enemy").play_audio()
 	pass
 	
 func get_audio_queue_by_name(audio_name: String) -> AudioQueue :
