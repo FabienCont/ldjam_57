@@ -10,7 +10,6 @@ class_name Player
 func _ready() -> void:
 	init_player(player_info)
 	
-	
 func init_player(player_info_init :PlayerInfo) -> void:
 	init_entity(playerStats.export_to_stat_controller(),player_info_init.upgrades_controller,player_info_init.abilities_controller,player_info_init.logic_component)
 	player_info = player_info_init

@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dafdi4qev3jf2"]
+
+[ext_resource type="Script" uid="uid://cedujypwlgfqo" path="res://game/components/light_torch_2d/torch_point_light_2d.gd" id="1_mmsdq"]
+[ext_resource type="Texture2D" uid="uid://dabi7ierwwjrd" path="res://assets/sprites/light_mask.aseprite" id="2_45x3y"]
+
+[node name="LightTorch2DPivot" type="Node2D"]
+z_index = -1
+script = ExtResource("1_mmsdq")
+
+[node name="LightTorch2D" type="PointLight2D" parent="."]
+visible = false
+visibility_layer = 2
+z_index = -1
+energy = 0.0
+blend_mode = 2
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 0.5
+texture = ExtResource("2_45x3y")
+offset = Vector2(128, 0)

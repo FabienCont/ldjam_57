@@ -1,4 +1,4 @@
-~ home
+~ start
 Me: What a day I'm exausted. 
 => END
 
@@ -6,7 +6,6 @@ Me: What a day I'm exausted.
 Me: Feel's good getting home. Let's take a nap
 set GameStateAutoload.data.want_to_sleep = true
 => END
-
 
 ~ outside
 Me : I had a long day I should sleep.

@@ -12,7 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://d0jtkih8pdhp6" path="res://assets/sounds/enemy/-003.wav" id="6_nd2wr"]
 [ext_resource type="AudioStream" uid="uid://dwsgci2vg2csg" path="res://assets/sounds/footsteps/-004.wav" id="7_jg6gf"]
 [ext_resource type="AudioStream" uid="uid://dsythn3o1v3ff" path="res://assets/sounds/footsteps/-001.wav" id="7_tyo62"]
-[ext_resource type="AudioStream" uid="uid://o86xorvrn1vv" path="res://assets/sounds/footsteps/-002.wav" id="8_rltyx"]
+[ext_resource type="AudioStream" uid="uid://cpseynmwpbu33" path="res://assets/sounds/footsteps/-005.wav" id="8_ahd7s"]
 [ext_resource type="AudioStream" uid="uid://bx0ld5q2ikfjk" path="res://assets/sounds/footsteps/-003.wav" id="9_umesm"]
 [ext_resource type="AudioStream" uid="uid://4asocthceqxk" path="res://assets/sounds/boom/-002.wav" id="12_ahd7s"]
 [ext_resource type="AudioStream" uid="uid://balnq0fep7djx" path="res://assets/sounds/sleep/Master.wav" id="13_ls1v6"]
@@ -26,7 +26,7 @@ stream_2/stream = ExtResource("6_k5g1a")
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_drd8g"]
 streams_count = 4
 stream_0/stream = ExtResource("7_tyo62")
-stream_1/stream = ExtResource("8_rltyx")
+stream_1/stream = ExtResource("8_ahd7s")
 stream_2/stream = ExtResource("9_umesm")
 stream_3/stream = ExtResource("7_jg6gf")
 
@@ -74,6 +74,7 @@ script = ExtResource("2_2vw71")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="footsteps"]
 stream = SubResource("AudioStreamRandomizer_drd8g")
+pitch_scale = 1.2
 bus = &"effects"
 
 [node name="boom" type="Node" parent="."]

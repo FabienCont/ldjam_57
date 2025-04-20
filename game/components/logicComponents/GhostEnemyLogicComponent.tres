@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://da5jn1s3od7db" path="res://game/components/logicComponents/EnemyLogicComponent.gd" id="1_bm0wm"]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("1_bm0wm")
 distance_before_attack = 25.0
 metadata/_custom_type_script = "uid://da5jn1s3od7db"

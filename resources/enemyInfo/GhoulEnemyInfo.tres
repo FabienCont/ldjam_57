@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://de6pr8p7p5yjf" path="res://assets/sprites/ghost_hero.aseprite" id="4_0pfa7"]
 
 [resource]
-resource_local_to_scene = true
 script = ExtResource("3_gkivp")
 name = "ghost"
 sprite = ExtResource("4_0pfa7")

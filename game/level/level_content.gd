@@ -1,33 +1,35 @@
 extends Node2D
 
-@onready var proxyLevel= $ProxyLevel
-@onready var player = $ProxyLevel/Player
-@onready var enemies = $ProxyLevel/Enemies
-@onready var playerLightTorch = $ProxyLevel/Player/LightTorch2DPivot/LightTorch2D
-@onready var playerLight2D = $ProxyLevel/Player/PlayerLight2D
-@onready var directionalLightOff = $ProxyLevel/DirectionalLight2D
+class_name LevelContent
+
+@onready var player = $Player
+@onready var enemies = $Enemies
+@onready var playerLightTorch = $Player/LightTorch2DPivot/LightTorch2D
+@onready var playerLight2D = $Player/PlayerLight2D
+@onready var directionalLightOff = $DirectionalLight2D
+@export var level_name = ""
 
 func _ready() -> void:
 	GameStateAutoload.data.level = self
-	GameStateAutoload.data.level_name = "level_2"
+	GameStateAutoload.data.level_name = level_name
 	await get_tree().create_timer(0.5).timeout
 	GameSignalsAutoload.level_loaded.emit()
 	DialogueManager.show_dialogue_balloon(load("res://assets/dialogues/"+GameStateAutoload.data.level_name+".dialogue"), "start")
-	
-func restart_level() -> void:
-	SceneLoader.change_scene_to_packed(load("res://game/level/"+GameStateAutoload.data.level_name+".tscn"),SceneLoader.TransitionTypeEnum.LOADING_SCREEN)
-	
-func lose_level() -> void:
-	turn_off_light_torch()
-	DialogueManager.show_dialogue_balloon(load("res://assets/dialogues/hit_by_enemy.dialogue"), "start")
-	await DialogueManager.dialogue_ended
-	restart_level()
 	
 func shutdown_light() -> void:
 	AudioManager.playBoomShutdownSound()
 	CameraUtils.shake_camera(self,5000)
 	await get_tree().create_timer(1.5).timeout
 	turn_off_light()
+
+func restart_level() -> void:
+	SceneLoader.change_scene_to_packed(load("res://game/level/"+GameStateAutoload.data.level_name+".tscn"),SceneLoader.TransitionTypeEnum.LOADING_SCREEN)
+
+func lose_level() -> void:
+	turn_off_light_torch()
+	DialogueManager.show_dialogue_balloon(load("res://assets/dialogues/hit_by_enemy.dialogue"), "start")
+	await DialogueManager.dialogue_ended
+	restart_level()
 
 func turn_on_light_torch() -> void:
 	playerLightTorch.show()

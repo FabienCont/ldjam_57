@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhcpxdepptrnv"]
+
+[ext_resource type="Texture2D" uid="uid://37xbkw2ywkpj" path="res://assets/sprites/torch_light_mask.aseprite" id="1_0a6tl"]
+
+[node name="PlayerLight2D" type="PointLight2D"]
+visible = false
+light_mask = 2
+visibility_layer = 2
+y_sort_enabled = true
+energy = 0.0
+blend_mode = 2
+shadow_filter = 1
+texture = ExtResource("1_0a6tl")

@@ -12,11 +12,7 @@ func _ready() -> void:
 		prepare_enemy()
 	
 func prepare_enemy() -> void :
-	enemy_info.stats_controller = enemy_info.enemyStatData.export_to_stat_controller()
-	init_entity(enemy_info.stats_controller,enemy_info.upgrades_controller,enemy_info.abilities_controller,enemy_info.logic_component)
-	enemy_info.stats_controller = stats_controller
-	enemy_info.upgrades_controller = upgrades_controller
-	enemy_info.abilities_controller = abilities_controller
+	init_entity(enemy_info.enemyStatData.export_to_stat_controller(),enemy_info.upgrades_controller,enemy_info.abilities_controller,enemy_info.logic_component)
 	logic_component = enemy_info.logic_component
 	if target != null :
 		followTargetComponent.set_node_to_follow(target)

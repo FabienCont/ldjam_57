@@ -1,7 +1,7 @@
-<REAPER_PROJECT 0.1 "7.30/win64" 1744451686
+<REAPER_PROJECT 0.1 "7.35/win64" 1744073919
   <NOTES 0 2
   >
-  RIPPLE 0
+  RIPPLE 0 0
   GROUPOVERRIDE 0 0 0
   AUTOXFADE 129
   ENVATTACH 3
@@ -19,7 +19,7 @@
   PANMODE 3
   PANLAWFLAGS 3
   CURSOR 0
-  ZOOM 392.51779035588146 0 0
+  ZOOM 100 0 0
   VZOOMEX 6 0
   USE_REC_CFG 0
   RECMODE 1
@@ -32,8 +32,8 @@
   >
   <APPLYFX_CFG
   >
-  RENDER_FILE F:\repo\perso\godot\ldjam_57\assets\sounds\footsteps
-  RENDER_PATTERN $track_test
+  RENDER_FILE F:\repo\godot\ldjam_57\assets\sounds\footsteps
+  RENDER_PATTERN $track
   RENDER_FMT 0 2 44100
   RENDER_1X 0
   RENDER_RANGE 1 0 0 0 1000
@@ -64,7 +64,7 @@
     MULT 1
   >
   GLOBAL_AUTO -1
-  TEMPO 120 4 4
+  TEMPO 120 4 4 0
   PLAYRATE 1 0 0.25 4
   SELECTION 4.24469387755102 4
   SELECTION2 4.24469387755102 4
@@ -112,7 +112,7 @@
     BUSCOMP 0 0 0 0 0
     SHOWINMIX 1 0.6667 0.5 1 0.5 0 0 0
     FIXEDLANES 9 0 0 0 0
-    SEL 0
+    SEL 1
     REC 0 0 1 0 0 0 0 0
     VU 2
     TRACKHEIGHT 0 0 0 0 0 0 0
@@ -130,9 +130,9 @@
       LOOP 1
       ALLTAKES 0
       FADEIN 1 0.01 0 1 0 0 0
-      FADEOUT 1 0.38478658655146 0 1 0 0 0
+      FADEOUT 1 0.01 0 1 0 0 0
       MUTE 0 0
-      SEL 0
+      SEL 1
       IGUID {2AF410AD-27BD-4685-A677-953A3CF5BC2F}
       IID 1
       NAME 01-250408_0247.wav
@@ -143,7 +143,7 @@
       GUID {A8F0B41E-A76F-4012-9071-F9767D5F20E7}
       RECPASS 1
       <SOURCE WAVE
-        FILE "-001.wav"
+        FILE "C:\Users\fabien\Documents\REAPER Media\01-250408_0247.wav"
       >
     >
   >
@@ -154,7 +154,7 @@
     AUTOMODE 0
     PANLAWFLAGS 3
     VOLPAN 1 0 -1 -1 1
-    MUTESOLO 0 2 0
+    MUTESOLO 0 0 0
     IPHASE 0
     PLAYOFFS 0 1
     ISBUS 0 0
@@ -179,7 +179,7 @@
       LOOP 1
       ALLTAKES 0
       FADEIN 1 0.01 0 1 0 0 0
-      FADEOUT 1 0.54528886580581 0 1 0 0 0
+      FADEOUT 1 0.01 0 1 0 0 0
       MUTE 0 0
       SEL 0
       IGUID {612A8510-35FB-425C-94DC-138E8CD5F2CC}
@@ -192,7 +192,7 @@
       GUID {97CAB83D-586E-4463-B920-0335695A346A}
       RECPASS 2
       <SOURCE WAVE
-        FILE "-002.wav"
+        FILE "C:\Users\fabien\Documents\REAPER Media\02-250408_0248.wav"
       >
     >
   >
@@ -210,7 +210,7 @@
     BUSCOMP 0 0 0 0 0
     SHOWINMIX 1 0.6667 0.5 1 0.5 0 0 0
     FIXEDLANES 9 0 0 0 0
-    SEL 0
+    SEL 1
     REC 0 0 1 0 0 0 0 0
     VU 2
     TRACKHEIGHT 0 0 0 0 0 0 0
@@ -228,9 +228,9 @@
       LOOP 1
       ALLTAKES 0
       FADEIN 1 0.01 0 1 0 0 0
-      FADEOUT 1 0.527455279222 0 1 0 0 0
+      FADEOUT 1 0.01 0 1 0 0 0
       MUTE 0 0
-      SEL 1
+      SEL 0
       IGUID {966F83D9-72E3-439E-A283-19293E02F78D}
       IID 3
       NAME 03-250408_0248.wav
@@ -241,7 +241,7 @@
       GUID {156E1A5E-4B7D-442C-94AD-FFC61453F5E6}
       RECPASS 3
       <SOURCE WAVE
-        FILE "-003.wav"
+        FILE "C:\Users\fabien\Documents\REAPER Media\03-250408_0248.wav"
       >
     >
   >
@@ -259,7 +259,7 @@
     BUSCOMP 0 0 0 0 0
     SHOWINMIX 1 0.6667 0.5 1 0.5 0 0 0
     FIXEDLANES 9 0 0 0 0
-    SEL 0
+    SEL 1
     REC 0 0 1 0 0 0 0 0
     VU 2
     TRACKHEIGHT 0 0 0 0 0 0 0
@@ -277,7 +277,7 @@
       LOOP 1
       ALLTAKES 0
       FADEIN 1 0.01 0 1 0 0 0
-      FADEOUT 1 0.58859900465223 0 1 0 0 0
+      FADEOUT 1 0.01 0 1 0 0 0
       MUTE 0 0
       SEL 0
       IGUID {84977BF7-78C9-43F2-B933-3E4D562B7386}
@@ -290,7 +290,7 @@
       GUID {06E923F5-4F33-4350-B88E-A3B4D3BCCB04}
       RECPASS 4
       <SOURCE WAVE
-        FILE "-004.wav"
+        FILE "C:\Users\fabien\Documents\REAPER Media\04-250408_0249.wav"
       >
     >
   >

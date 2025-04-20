@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://0ir5rma1y570"]
+
+[ext_resource type="Script" uid="uid://dru20sqhiqixs" path="res://game/level/level_container.gd" id="1_tr6v6"]
+
+[node name="LevelViewportContainer" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tr6v6")
+
+[node name="LevelSubViewportContainer" type="SubViewportContainer" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LevelSubViewport" type="SubViewport" parent="LevelSubViewportContainer"]
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+size = Vector2i(1280, 720)
+size_2d_override = Vector2i(640, 360)
+size_2d_override_stretch = true
+render_target_update_mode = 4

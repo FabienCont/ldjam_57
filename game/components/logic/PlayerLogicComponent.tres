@@ -3,5 +3,6 @@
 [ext_resource type="Script" uid="uid://dh66qmj7pmq2d" path="res://addons/JamStarterPack/resources/abilities/implementations/PlayerLogicComponent.gd" id="1_waee8"]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("1_waee8")
 metadata/_custom_type_script = "uid://dh66qmj7pmq2d"

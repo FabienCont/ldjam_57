@@ -7,7 +7,7 @@
 [ext_resource type="Theme" uid="uid://de2fw7xb42v13" path="res://game/game_theme.tres" id="2_8jq1a"]
 [ext_resource type="Texture2D" uid="uid://cam53b04tjptu" path="res://assets/sprites/Moon.aseprite" id="5_n16gg"]
 
-[node name="Control" type="Control"]
+[node name="HomeMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
